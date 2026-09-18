@@ -1,0 +1,27 @@
+# Build output. The .exe is 45 MB and is rebuilt from source, so it does not
+# belong in the repository.
+gst-portal-tools.exe
+dist/
+build/
+*.spec.bak
+
+# Maintainer-only scripts. These carry this office's absolute paths (the DSB
+# folder that is canonical for the three fetchers) and mean nothing to anyone
+# who cloned this. The .spec DOES ship - it is generic, and it is what someone
+# else needs in order to build the exe themselves.
+_sync_from_dsb.ps1
+_build_exe.ps1
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Never publishable. The PARENT folder (Tax Tools) holds clients.json and
+# filings_db.json - real client data. These entries are a second line of
+# defence only: the repository root must be gst-portal-tools, never Tax Tools.
+clients.json
+filings_db.json
+*.dsb
+GSTN Portal Data/
